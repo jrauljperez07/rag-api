@@ -13,7 +13,6 @@ COPY ./scripts /scripts
 EXPOSE 8000
 
 ARG DEV=true
-# RUN apt-get update 
 
 # Install Chrome
 RUN apt-get update && apt-get install -y wget gnupg2 \
@@ -24,7 +23,6 @@ RUN apt-get update && apt-get install -y wget gnupg2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-#Install ChromeDriver
 RUN CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` \
     && wget -q --continue -P /chromedriver "http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip" \
     && unzip /chromedriver/chromedriver* -d /usr/local/bin/ \
@@ -35,7 +33,6 @@ RUN python -m venv /py && \
     /py/bin/python -m ensurepip && \
     /py/bin/pip install --upgrade pip
 
-# Removed the pip config set global.use-feature 2020-resolver line
 
 RUN rm -rf /tmp
 

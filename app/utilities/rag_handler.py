@@ -32,6 +32,8 @@ class RAGHandler:
             logging.exception("Unexpected error occurred when checking unseen emails.")
             return ({"detail": " An unexpected error occurred, " + str(e)}) 
         
-    def add_source(self):
+    def add_source(self, path: str):
         """Add source to RAG model."""
-        self.rag_app.add('utilities/Inbox.csv')
+        self.rag_app.add(path)
+
+        return {"detail": "Source added successfully."} 

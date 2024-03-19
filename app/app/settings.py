@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-bapdxa3o_ix5ov-3to@iw%1^t=s8fkg%vu^^(9__9b^gafzqik
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'drf_spectacular',
     'corsheaders',
+
+    'rag',
+    'core',
+    'utilities',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +142,7 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     'COMPONENT_SPLIT_REQUEST': True,
-    'TITLE': 'RAG API',
+    'TITLE': 'RAG Microservice API',
     'VERSION': '0.0.1',
     'SERVE_INCLUDE_SCHEMA': False,
     'SWAGGER_UI_SETTINGS': {

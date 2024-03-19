@@ -1,5 +1,4 @@
 import os
 
-HUGGINGFACE_ACCESS_TOKEN = 'API_KEY'
+HUGGINGFACE_ACCESS_TOKEN = os.getenv("HUGGINGFACE_ACCESS_TOKEN")
 MODEL_RAG = "utilities/mistral.yaml"
-RAG_SOURCE = "utilities/rag.csv"

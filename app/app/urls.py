@@ -29,6 +29,5 @@ urlpatterns = [
         SpectacularSwaggerView.as_view(url_name='api-schema'),
         name='api-docs',
     ),
-    path('api/', include('rag_add.api.urls')),
-    path('api/', include('rag_chat.api.urls')),
+    path('api/', include('rag.api.urls')),
 ]
